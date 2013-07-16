@@ -15,6 +15,10 @@
   		<param-name>MobilePush</param-name>
   		<param-value>false</param-value>
   	</init-param>
+  	<init-param>
+  		<param-name>keepConnectionTime</param-name>
+  		<param-value>12000</param-value>
+  	</init-param>
   </servlet>
   <servlet-mapping>
   	<servlet-name>ESP</servlet-name>
