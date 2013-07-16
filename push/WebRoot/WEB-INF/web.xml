@@ -8,20 +8,4 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>
-  	<servlet-name>ESP</servlet-name>
-  	<servlet-class>org.esp.dispatcher.ESPServlet</servlet-class>
-  	<init-param>
-  		<param-name>MobilePush</param-name>
-  		<param-value>false</param-value>
-  	</init-param>
-  	<init-param>
-  		<param-name>keepConnectionTime</param-name>
-  		<param-value>12000</param-value>
-  	</init-param>
-  </servlet>
-  <servlet-mapping>
-  	<servlet-name>ESP</servlet-name>
-  	<url-pattern>*.esp</url-pattern>
-  </servlet-mapping>
 </web-app>
