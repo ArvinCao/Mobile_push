@@ -13,4 +13,10 @@ public class GlobalParams {
 	//使用google的protobuf作为数据传输时的类型
 	public static final String DATA_PROTOBUF = "Protobuf";
 	
+	//发送方为浏览器的常量
+	public static final int WEB = 1;
+	
+	//发送方为移动端的常量
+	public static final int MOBILE = 2;
+	
 }

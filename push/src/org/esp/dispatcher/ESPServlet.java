@@ -22,10 +22,11 @@ import org.esp.config.GlobalParams;
 public class ESPServlet extends HttpServlet {
 
 	private Log log = LogFactory.getLog(ESPServlet.class);
-	public final static String MOBILEPUSH = "MobilePush";
-	public final static String WEBPUSH = "WebPush";
-	public final static String KEEP_CONNECTION_TIME = "keepConnectionTime";
-	public final static String DATATYPE = "DataType";
+	private final static String MOBILEPUSH = "MobilePush";
+	private final static String WEBPUSH = "WebPush";
+	private final static String KEEP_CONNECTION_TIME = "keepConnectionTime";
+	private final static String DATATYPE = "DataType";
+	private final static String FROM = "from";//发送方
 
 	/**
 	 * 初始化参数 读取servlet参数，并交予全局参数，对整个框架进行初始化
@@ -81,7 +82,7 @@ public class ESPServlet extends HttpServlet {
 		if(!EspConfig.WEB_PUSH&&!EspConfig.MOBILE_PUSH){
 			throw new RuntimeException("您未启用任何服务器推送方式");
 		}
-		
+		int from =  (Integer) req.getAttribute(FROM);
 	}
 
 }
