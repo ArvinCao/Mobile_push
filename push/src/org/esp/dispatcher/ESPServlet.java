@@ -61,6 +61,9 @@ public class ESPServlet extends HttpServlet {
 			e.printStackTrace();
 			log.error("初始化服务器推送失败");
 		}
+		if(!EspConfig.WEB_PUSH&&!EspConfig.MOBILE_PUSH){
+			throw new RuntimeException("您未启用任何服务器推送方式");
+		}
 		log.info("初始化服务器成功...");	
 	}
 
@@ -74,15 +77,13 @@ public class ESPServlet extends HttpServlet {
 	}
 
 	/**
-	 * post请求 阻塞当前请求保持长连接
+	 * post请求 
+	 * 接收后缀为.esp的请求，在这里进行服务器推送的逻辑处理
 	 */
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-		if(!EspConfig.WEB_PUSH&&!EspConfig.MOBILE_PUSH){
-			throw new RuntimeException("您未启用任何服务器推送方式");
-		}
-		int from =  (Integer) req.getAttribute(FROM);
+		
 	}
 
 }
