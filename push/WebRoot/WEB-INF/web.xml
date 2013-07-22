@@ -31,4 +31,7 @@
 		<servlet-name>ESP</servlet-name>
 		<url-pattern>*.esp</url-pattern>
 	</servlet-mapping>
+	<listener>
+		<listener-class>org.esp.listener.SessionListener</listener-class>
+	</listener>
 </web-app>

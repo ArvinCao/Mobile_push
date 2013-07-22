@@ -1,5 +1,7 @@
 package org.esp.thread.impl;
 
+import java.util.concurrent.CountDownLatch;
+
 import org.esp.thread.Dormant;
 
 /**
@@ -9,21 +11,21 @@ import org.esp.thread.Dormant;
  */
 public class BaseThreadDormant implements Dormant {
 	
-	private Thread thread;
+	private CountDownLatch latch;
 
 	@Override
 	public void sleep(long sleeptime,Thread thread) {
+		latch = new CountDownLatch(1);
 		try {
-			Thread.sleep(sleeptime);
+			latch.await();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 	@Override
 	public void wakeup() {
-		Thread.interrupted();
+		latch.countDown();
 	}
 
 }

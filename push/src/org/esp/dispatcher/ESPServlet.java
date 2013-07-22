@@ -7,11 +7,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.esp.client.Client;
+import org.esp.client.ClientManager;
 import org.esp.config.EspConfig;
-import org.esp.config.GlobalParams;
 
 /**
  * 分发器用于处理特定后缀的拦截
